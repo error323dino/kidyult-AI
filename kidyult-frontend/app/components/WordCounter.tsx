@@ -163,7 +163,7 @@ const WordCounter: React.FC = () => {
         {wordCounts.length === 0 ? (
           <p>No results to display</p>
         ) : (
-          wordCounts.map(({ file, wordCounts }, fileIndex) => (
+          wordCounts.map(({ wordCounts }, fileIndex) => (
             <div key={fileIndex} style={{ marginBottom: '20px' }}>
 
               <ul>
