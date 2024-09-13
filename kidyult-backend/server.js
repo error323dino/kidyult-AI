@@ -72,13 +72,19 @@ const handleFileUpload = (req, res) => {
     });
 };
 
-
 // Create the HTTP server
 const server = http.createServer((req, res) => {
     // Handle CORS manually
-    res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000'); // Allow your frontend origin
-    res.setHeader('Access-Control-Allow-Methods', 'POST');
+    res.setHeader('Access-Control-Allow-Origin', 'https://kidyult-ai.vercel.app'); // Allow your frontend origin
+    res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS'); // Allow POST and OPTIONS methods
     res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+
+    if (req.method === 'OPTIONS') {
+        // Handle preflight requests
+        res.writeHead(204);
+        res.end();
+        return;
+    }
 
     if (req.url === '/api/upload' && req.method.toLowerCase() === 'post') {
         handleFileUpload(req, res);
