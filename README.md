@@ -1,1 +1,1 @@
-tmr do
+This project is deployed on Vercel since Next.js is used for the frontend, as the frontend and backend are seperated into 2 files. Python with Node.js is implemented for the backend, so do run the command 'node server js' while testing for this application (both locally or on cloud) as the server is hosted locally 'http://localhost:5000/api/upload'. Functionalities are all included, but tests are NOT written for this application. Website is not responsive.
